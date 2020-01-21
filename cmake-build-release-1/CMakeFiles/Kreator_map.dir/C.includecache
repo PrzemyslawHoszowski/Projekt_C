@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/przemek/Dokumenty/WDC/Kreator_map/funkcje.c
+funkcje.h
+/home/przemek/Dokumenty/WDC/Kreator_map/funkcje.h
+
+/home/przemek/Dokumenty/WDC/Kreator_map/funkcje.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+jpeglib.h
+-
+stdbool.h
+-
+

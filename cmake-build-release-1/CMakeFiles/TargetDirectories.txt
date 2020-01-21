@@ -1,0 +1,3 @@
+/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles/rebuild_cache.dir
+/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles/Kreator_map.dir
+/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles/edit_cache.dir

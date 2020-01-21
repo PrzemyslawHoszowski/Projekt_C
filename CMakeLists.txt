@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.15)
+project(Kreator_map)
+
+set(C_STANDARD 14)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+add_executable(Kreator_map
+        funkcje.c
+        funkcje.h
+        kreator_map.c)
+target_link_libraries(Kreator_map -ljpeg)

@@ -1,0 +1,4 @@
+/home/przemek/Programy/Clion/clion-2019.2.5/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G "CodeBlocks - Unix Makefiles" /home/przemek/Dokumenty/WDC/Kreator_map
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1
