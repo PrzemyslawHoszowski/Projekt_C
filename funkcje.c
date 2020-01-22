@@ -106,7 +106,7 @@ void ile_wody(int i, int j, int *x, int *y, short wysokosci[*y][*x], bool vis[*y
     printf("%i\n",suma);
     suma++;
     vis[i][j]=1;
-    if (suma>=)
+    //if (suma>=)
 
 
     if (j+1<*x && vis[i][j+1]==0 && wysokosci[i][j+1]==0) // W prawo
@@ -240,6 +240,7 @@ void wypisz_do_pliku_1(int x, int y, short wysokosci[y][x],char nazwa[41]){
 
 void program(char nazwy_plikow[][41],int ile_plikow,char nazwa[41])
 {
+    dokladnosc=1201;
     int krawedz=0;
     while (krawedz*krawedz<ile_plikow)
         krawedz++;
@@ -267,19 +268,18 @@ void program(char nazwy_plikow[][41],int ile_plikow,char nazwa[41])
     putchar('s');
     int rzad=0; /// Ktory rzad PLIKOW
     getchar();
-    for (int i=0;i<krawedz*(dokladnosc-1)+1;i++)
+    for (int i=0;i<ile_pixeli;i++)
     {
             for (int j=0;j<krawedz;j++) {
-                printf("%i,%i,%i\n", i,j,rzad * krawedz + j-rzad);
-                if (fread(&wysokosci[i][j * dokladnosc - j], sizeof(short), dokladnosc, pliki[rzad * krawedz + j-rzad]) !=
+                printf("%i,%i,%i,%i\n", i,j,rzad * krawedz + j-rzad,rzad);
+                if (fread(&wysokosci[i][j * dokladnosc - j], sizeof(short), dokladnosc, pliki[rzad * krawedz + j]) !=
                     dokladnosc) {
                     printf("Blad przy czytaniu plikus %i\n", i);
                     exit(3);
                 }
-
-                if (i == 1200)
-                    rzad++;
             }
+        if (i!=0 && i%(dokladnosc-1)==0)
+            rzad++;
     }
 
     for (int i=0;i<ile_plikow;i++)
@@ -302,7 +302,7 @@ void program(char nazwy_plikow[][41],int ile_plikow,char nazwa[41])
     }
     fclose(wynik);
     /// Dlaczego tutaj jest limit pamieci ???
-    usun_wode(ile_pixeli,ile_pixeli, wysokosci, dokladnosc);
+    //usun_wode(ile_pixeli,ile_pixeli, wysokosci, dokladnosc);
     wypisz_do_pliku_1(ile_pixeli,ile_pixeli,wysokosci,nazwa);
     printf("DZiala");
 }

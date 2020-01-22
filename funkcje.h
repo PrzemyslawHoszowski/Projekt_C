@@ -38,7 +38,7 @@ int stoi(char *znaki);
 /// \param ile_plikow - ile jest plikow do odczytania
 /// \param dokladnosc - jaka jest dokladnosc mapy
 /// \param nazwa - nazwa pliku do ktorego ma byc wypisany wynik
-void program (char nazwy_plikow[][41], int ile_plikow, int dokladnosc,char nazwa[41]);
+void program (char nazwy_plikow[][41], int ile_plikow,char nazwa[41]);
 
 /// Wczytanie palety kolorow z pliku oraz dostosowanie skali
 /// \param min_wysokosc
