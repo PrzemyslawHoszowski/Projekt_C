@@ -15,6 +15,12 @@ typedef struct kolor{
      struct kolor *next; /// Wskaznik na kolejny kolor
 }kolor;
 
+typedef struct wagon{
+    int x;
+    int y;
+    struct wagon *next;
+}wagon;
+
 /// Big endian format <-> little endian format
 /// \param tmp - zmienna typu short
 /// \return Liczba z obroconymi bitami

@@ -102,11 +102,11 @@ kolor* wczytaj_palete(short min_wysokosc, short maks_wysokosc){
     return paleta.next;
 }
 
-void ile_wody(int i, int j, int *x, int *y, short wysokosci[*y][*x], bool vis[*y][*x]){
+void ile_wody(int i, int j, int *x, int *y, short wysokosci[*y][*x], bool vis[*y][*x]){ /// To jest do niczego trzeba kolejke jakas zrobic
     printf("%i\n",suma);
     suma++;
     vis[i][j]=1;
-    //if (suma>=)
+    if (suma>=)
 
 
     if (j+1<*x && vis[i][j+1]==0 && wysokosci[i][j+1]==0) // W prawo
