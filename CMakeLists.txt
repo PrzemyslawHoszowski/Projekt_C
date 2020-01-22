@@ -6,5 +6,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 add_executable(Kreator_map
         funkcje.c
         funkcje.h
-        kreator_map.c)
+        kreator_map.c
+        kolejka.c
+        kolejka.h)
 target_link_libraries(Kreator_map -ljpeg)

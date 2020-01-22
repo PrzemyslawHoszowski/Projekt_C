@@ -150,6 +150,33 @@ funkcje.c.s:
 	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/funkcje.c.s
 .PHONY : funkcje.c.s
 
+kolejka.o: kolejka.c.o
+
+.PHONY : kolejka.o
+
+# target to build an object file
+kolejka.c.o:
+	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/kolejka.c.o
+.PHONY : kolejka.c.o
+
+kolejka.i: kolejka.c.i
+
+.PHONY : kolejka.i
+
+# target to preprocess a source file
+kolejka.c.i:
+	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/kolejka.c.i
+.PHONY : kolejka.c.i
+
+kolejka.s: kolejka.c.s
+
+.PHONY : kolejka.s
+
+# target to generate assembly for a file
+kolejka.c.s:
+	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/kolejka.c.s
+.PHONY : kolejka.c.s
+
 kreator_map.o: kreator_map.c.o
 
 .PHONY : kreator_map.o
@@ -189,6 +216,9 @@ help:
 	@echo "... funkcje.o"
 	@echo "... funkcje.i"
 	@echo "... funkcje.s"
+	@echo "... kolejka.o"
+	@echo "... kolejka.i"
+	@echo "... kolejka.s"
 	@echo "... kreator_map.o"
 	@echo "... kreator_map.i"
 	@echo "... kreator_map.s"

@@ -3,7 +3,12 @@
 
 CMakeFiles/Kreator_map.dir/funkcje.c.o: ../funkcje.c
 CMakeFiles/Kreator_map.dir/funkcje.c.o: ../funkcje.h
+CMakeFiles/Kreator_map.dir/funkcje.c.o: ../kolejka.h
+
+CMakeFiles/Kreator_map.dir/kolejka.c.o: ../kolejka.c
+CMakeFiles/Kreator_map.dir/kolejka.c.o: ../kolejka.h
 
 CMakeFiles/Kreator_map.dir/kreator_map.c.o: ../funkcje.h
+CMakeFiles/Kreator_map.dir/kreator_map.c.o: ../kolejka.h
 CMakeFiles/Kreator_map.dir/kreator_map.c.o: ../kreator_map.c
 

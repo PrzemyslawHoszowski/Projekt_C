@@ -2,7 +2,8 @@
 // Created by Przemysław Hoszowski on 08.01.2020.
 //
 #include "funkcje.h"
-int suma,dokladnosc=1021;
+int dokladnosc=1021;
+
 short odwroc(short tmp)
 {
     short odp=0;
@@ -102,21 +103,39 @@ kolor* wczytaj_palete(short min_wysokosc, short maks_wysokosc){
     return paleta.next;
 }
 
-void ile_wody(int i, int j, int *x, int *y, short wysokosci[*y][*x], bool vis[*y][*x]){ /// To jest do niczego trzeba kolejke jakas zrobic
-    printf("%i\n",suma);
-    suma++;
-    vis[i][j]=1;
-    if (suma>=)
-
-
-    if (j+1<*x && vis[i][j+1]==0 && wysokosci[i][j+1]==0) // W prawo
-        ile_wody(i, j+1, x, y, wysokosci, vis);
-    if (j>0 && vis[i][j-1]==0 && wysokosci[i][j-1]==0) // W lewo
-        ile_wody(i,j-1, x, y, wysokosci, vis);
-    if (i+1<*y && vis[i+1][j]==0 && wysokosci[i+1][j]==0) // W dol
-        ile_wody(i+1, j, x, y, wysokosci, vis);
-    if (i>0 && vis[i-1][j]==0 && wysokosci[i-1][j]==0) // W gore
-        ile_wody(i-1, j, x, y, wysokosci, vis);
+int ile_wody(int i, int j, int x, int y, short wysokosci[y][x], bool vis[y][x]) { /// To jest do niczego trzeba kolejke jakas zrobic
+    int suma=0;
+    kolejka *queue = malloc(sizeof(kolejka));
+    queue->ostatni=NULL;
+    vis[i][j] = 1;
+    dodaj(queue, i, j);
+    while (queue->pierwszy != NULL)
+    {
+        wez(queue,&i,&j);
+        suma++;
+        if (i>0 && vis[i-1][j]==0 && wysokosci[i-1][j]==0) /// do gory
+        {
+            dodaj(queue, i - 1, j);
+            vis[i-1][j]=1;
+        }
+        if (i<y-1 && vis[i+1][j]==0 && wysokosci[i+1][j]==0) /// w dol
+        {
+            dodaj(queue, i + 1, j);
+            vis[i+1][j]=1;
+        }
+        if (j>0 && vis[i][j-1]==0 && wysokosci[i][j-1]==0) /// do lewo
+        {
+            dodaj(queue,i,j-1);
+            vis[i][j-1]=1;
+        }
+        if (j<x-1 && vis[i][j+1]==0 && wysokosci[i][j+1]==0) /// do prawo
+        {
+            dodaj(queue,i,j+1);
+            vis[i][j+1]=1;
+        }
+    }
+    printf("Suma=%i\n",suma);
+    return suma;
 }
 
 void dodaj_ziemie(int i, int j, int x, int y,short wysokosci[y][x])
@@ -145,12 +164,10 @@ void usun_wode(int x, int y, short wysokosci[y][x],int dokladnosc){
     for (int i=0;i<y;i++)
         for (int j=0;j<x;j++)
             if (vis[i][j]==0 && wysokosci[i][j]==0) {
-                suma=0;
-                ile_wody(i, j, &x, &y, wysokosci, vis);
-                if (suma < dokladnosc * dokladnosc / 100000)
-                    printf("DZIALA ? ");
-                    //dodaj_ziemie(i, j, x, y, wysokosci);
+                if (ile_wody(i, j, x, y, wysokosci, vis) < dokladnosc * dokladnosc / 1000 )
+                    dodaj_ziemie(i, j, x, y, wysokosci);
             }
+    free(vis);
 }
 
 void wypelnij_linie(unsigned char *linia,int rzad, int szerokosc, short wysokosci[][szerokosc], kolor *paleta){
@@ -281,7 +298,6 @@ void program(char nazwy_plikow[][41],int ile_plikow,char nazwa[41])
         if (i!=0 && i%(dokladnosc-1)==0)
             rzad++;
     }
-
     for (int i=0;i<ile_plikow;i++)
     {
         fclose(pliki[i]);
@@ -301,8 +317,9 @@ void program(char nazwy_plikow[][41],int ile_plikow,char nazwa[41])
         fprintf(wynik,"\n");
     }
     fclose(wynik);
-    /// Dlaczego tutaj jest limit pamieci ???
-    //usun_wode(ile_pixeli,ile_pixeli, wysokosci, dokladnosc);
+
+    usun_wode(ile_pixeli,ile_pixeli, wysokosci, dokladnosc);
+    printf("USUN WODE DZIALA");
     wypisz_do_pliku_1(ile_pixeli,ile_pixeli,wysokosci,nazwa);
     printf("DZiala");
 }

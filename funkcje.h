@@ -9,17 +9,12 @@
 #include <string.h>
 #include <jpeglib.h>
 #include <stdbool.h>
+#include "kolejka.h"
 typedef struct kolor{
      short kod_koloru[3]; /// W RGB
      short wysokosc; /// Do jakiej wysokosci jest ten kolor
      struct kolor *next; /// Wskaznik na kolejny kolor
 }kolor;
-
-typedef struct wagon{
-    int x;
-    int y;
-    struct wagon *next;
-}wagon;
 
 /// Big endian format <-> little endian format
 /// \param tmp - zmienna typu short
@@ -60,7 +55,7 @@ kolor* wczytaj_palete(short min_wysokosc, short maks_wysokosc);
 /// \param paleta - paleta kolorow
 void wypelnij_linie(unsigned char *linia,int rzad, int szerokosc, short wysokosci[][szerokosc], kolor *paleta);
 
-void ile_wody(int i, int j, int *x, int *y, short wysokosci[*y][*x], bool vis[*y][*x]);
+int ile_wody(int i, int j, int x, int y, short wysokosci[y][x], bool vis[y][x]);
 
 void dodaj_ziemie (int i, int j, int x, int y, short wysokosci[y][x]);
 

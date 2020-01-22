@@ -90,6 +90,12 @@
 		<Unit filename="/home/przemek/Dokumenty/WDC/Kreator_map/funkcje.h">
 			<Option target="Kreator_map"/>
 		</Unit>
+		<Unit filename="/home/przemek/Dokumenty/WDC/Kreator_map/kolejka.c">
+			<Option target="Kreator_map"/>
+		</Unit>
+		<Unit filename="/home/przemek/Dokumenty/WDC/Kreator_map/kolejka.h">
+			<Option target="Kreator_map"/>
+		</Unit>
 		<Unit filename="/home/przemek/Dokumenty/WDC/Kreator_map/kreator_map.c">
 			<Option target="Kreator_map"/>
 		</Unit>
