@@ -4,8 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/przemek/Dokumenty/WDC/Kreator_map/funkcje.c" "/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles/Kreator_map.dir/funkcje.c.o"
-  "/home/przemek/Dokumenty/WDC/Kreator_map/kolejka.c" "/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles/Kreator_map.dir/kolejka.c.o"
+  "/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/funkcje.c" "/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.o"
+  "/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/kolejka.c" "/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.o"
+  "/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/wypisanie_do_pliku.c" "/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.o"
   "/home/przemek/Dokumenty/WDC/Kreator_map/kreator_map.c" "/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles/Kreator_map.dir/kreator_map.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

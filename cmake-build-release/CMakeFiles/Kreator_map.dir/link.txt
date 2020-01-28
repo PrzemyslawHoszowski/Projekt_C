@@ -1,1 +1,1 @@
-/usr/bin/gcc -O3 -DNDEBUG   CMakeFiles/Kreator_map.dir/funkcje.c.o CMakeFiles/Kreator_map.dir/kreator_map.c.o CMakeFiles/Kreator_map.dir/kolejka.c.o  -o Kreator_map -ljpeg 
+/usr/bin/gcc -O3 -DNDEBUG   CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.o CMakeFiles/Kreator_map.dir/kreator_map.c.o CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.o CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.o  -o Kreator_map -ljpeg 

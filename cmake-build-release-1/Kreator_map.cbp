@@ -84,16 +84,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/przemek/Dokumenty/WDC/Kreator_map/funkcje.c">
+		<Unit filename="/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/funkcje.c">
 			<Option target="Kreator_map"/>
 		</Unit>
-		<Unit filename="/home/przemek/Dokumenty/WDC/Kreator_map/funkcje.h">
+		<Unit filename="/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/funkcje.h">
 			<Option target="Kreator_map"/>
 		</Unit>
-		<Unit filename="/home/przemek/Dokumenty/WDC/Kreator_map/kolejka.c">
+		<Unit filename="/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/kolejka.c">
 			<Option target="Kreator_map"/>
 		</Unit>
-		<Unit filename="/home/przemek/Dokumenty/WDC/Kreator_map/kolejka.h">
+		<Unit filename="/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/kolejka.h">
+			<Option target="Kreator_map"/>
+		</Unit>
+		<Unit filename="/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/wypisanie_do_pliku.c">
+			<Option target="Kreator_map"/>
+		</Unit>
+		<Unit filename="/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/wypisanie_do_pliku.h">
 			<Option target="Kreator_map"/>
 		</Unit>
 		<Unit filename="/home/przemek/Dokumenty/WDC/Kreator_map/kreator_map.c">

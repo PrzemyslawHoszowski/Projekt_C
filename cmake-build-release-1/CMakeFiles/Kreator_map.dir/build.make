@@ -57,18 +57,18 @@ include CMakeFiles/Kreator_map.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Kreator_map.dir/flags.make
 
-CMakeFiles/Kreator_map.dir/funkcje.c.o: CMakeFiles/Kreator_map.dir/flags.make
-CMakeFiles/Kreator_map.dir/funkcje.c.o: ../funkcje.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Kreator_map.dir/funkcje.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Kreator_map.dir/funkcje.c.o   -c /home/przemek/Dokumenty/WDC/Kreator_map/funkcje.c
+CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.o: CMakeFiles/Kreator_map.dir/flags.make
+CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.o: ../funkcje/funkcje.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.o"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.o   -c /home/przemek/Dokumenty/WDC/Kreator_map/funkcje/funkcje.c
 
-CMakeFiles/Kreator_map.dir/funkcje.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Kreator_map.dir/funkcje.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/przemek/Dokumenty/WDC/Kreator_map/funkcje.c > CMakeFiles/Kreator_map.dir/funkcje.c.i
+CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.i"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/przemek/Dokumenty/WDC/Kreator_map/funkcje/funkcje.c > CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.i
 
-CMakeFiles/Kreator_map.dir/funkcje.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Kreator_map.dir/funkcje.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/przemek/Dokumenty/WDC/Kreator_map/funkcje.c -o CMakeFiles/Kreator_map.dir/funkcje.c.s
+CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.s"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/przemek/Dokumenty/WDC/Kreator_map/funkcje/funkcje.c -o CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.s
 
 CMakeFiles/Kreator_map.dir/kreator_map.c.o: CMakeFiles/Kreator_map.dir/flags.make
 CMakeFiles/Kreator_map.dir/kreator_map.c.o: ../kreator_map.c
@@ -83,34 +83,49 @@ CMakeFiles/Kreator_map.dir/kreator_map.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Kreator_map.dir/kreator_map.c.s"
 	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/przemek/Dokumenty/WDC/Kreator_map/kreator_map.c -o CMakeFiles/Kreator_map.dir/kreator_map.c.s
 
-CMakeFiles/Kreator_map.dir/kolejka.c.o: CMakeFiles/Kreator_map.dir/flags.make
-CMakeFiles/Kreator_map.dir/kolejka.c.o: ../kolejka.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Kreator_map.dir/kolejka.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Kreator_map.dir/kolejka.c.o   -c /home/przemek/Dokumenty/WDC/Kreator_map/kolejka.c
+CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.o: CMakeFiles/Kreator_map.dir/flags.make
+CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.o: ../funkcje/kolejka.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.o"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.o   -c /home/przemek/Dokumenty/WDC/Kreator_map/funkcje/kolejka.c
 
-CMakeFiles/Kreator_map.dir/kolejka.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Kreator_map.dir/kolejka.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/przemek/Dokumenty/WDC/Kreator_map/kolejka.c > CMakeFiles/Kreator_map.dir/kolejka.c.i
+CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.i"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/przemek/Dokumenty/WDC/Kreator_map/funkcje/kolejka.c > CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.i
 
-CMakeFiles/Kreator_map.dir/kolejka.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Kreator_map.dir/kolejka.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/przemek/Dokumenty/WDC/Kreator_map/kolejka.c -o CMakeFiles/Kreator_map.dir/kolejka.c.s
+CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.s"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/przemek/Dokumenty/WDC/Kreator_map/funkcje/kolejka.c -o CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.s
+
+CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.o: CMakeFiles/Kreator_map.dir/flags.make
+CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.o: ../funkcje/wypisanie_do_pliku.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.o"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.o   -c /home/przemek/Dokumenty/WDC/Kreator_map/funkcje/wypisanie_do_pliku.c
+
+CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.i"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/przemek/Dokumenty/WDC/Kreator_map/funkcje/wypisanie_do_pliku.c > CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.i
+
+CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.s"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/przemek/Dokumenty/WDC/Kreator_map/funkcje/wypisanie_do_pliku.c -o CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.s
 
 # Object files for target Kreator_map
 Kreator_map_OBJECTS = \
-"CMakeFiles/Kreator_map.dir/funkcje.c.o" \
+"CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.o" \
 "CMakeFiles/Kreator_map.dir/kreator_map.c.o" \
-"CMakeFiles/Kreator_map.dir/kolejka.c.o"
+"CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.o" \
+"CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.o"
 
 # External object files for target Kreator_map
 Kreator_map_EXTERNAL_OBJECTS =
 
-Kreator_map: CMakeFiles/Kreator_map.dir/funkcje.c.o
+Kreator_map: CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.o
 Kreator_map: CMakeFiles/Kreator_map.dir/kreator_map.c.o
-Kreator_map: CMakeFiles/Kreator_map.dir/kolejka.c.o
+Kreator_map: CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.o
+Kreator_map: CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.o
 Kreator_map: CMakeFiles/Kreator_map.dir/build.make
 Kreator_map: CMakeFiles/Kreator_map.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable Kreator_map"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/przemek/Dokumenty/WDC/Kreator_map/cmake-build-release-1/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable Kreator_map"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Kreator_map.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

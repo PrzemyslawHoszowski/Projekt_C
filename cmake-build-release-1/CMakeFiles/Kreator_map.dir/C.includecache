@@ -6,29 +6,39 @@
 
 #IncludeRegexTransform: 
 
-/home/przemek/Dokumenty/WDC/Kreator_map/funkcje.c
+/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/funkcje.c
 funkcje.h
-/home/przemek/Dokumenty/WDC/Kreator_map/funkcje.h
+/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/funkcje.h
 
-/home/przemek/Dokumenty/WDC/Kreator_map/funkcje.h
+/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/funkcje.h
 stdio.h
 -
 stdlib.h
 -
 string.h
 -
-jpeglib.h
--
 stdbool.h
 -
 kolejka.h
-/home/przemek/Dokumenty/WDC/Kreator_map/kolejka.h
+/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/kolejka.h
+wypisanie_do_pliku.h
+/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/wypisanie_do_pliku.h
 
-/home/przemek/Dokumenty/WDC/Kreator_map/kolejka.h
+/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/kolejka.h
 stdlib.h
 -
 
+/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/wypisanie_do_pliku.h
+string.h
+-
+stdio.h
+-
+stdlib.h
+-
+jpeglib.h
+-
+
 /home/przemek/Dokumenty/WDC/Kreator_map/kreator_map.c
-funkcje.h
-/home/przemek/Dokumenty/WDC/Kreator_map/funkcje.h
+funkcje/funkcje.h
+/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/funkcje.h
 

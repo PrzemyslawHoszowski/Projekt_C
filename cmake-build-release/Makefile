@@ -123,59 +123,86 @@ Kreator_map/fast:
 	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/build
 .PHONY : Kreator_map/fast
 
-funkcje.o: funkcje.c.o
+funkcje/funkcje.o: funkcje/funkcje.c.o
 
-.PHONY : funkcje.o
-
-# target to build an object file
-funkcje.c.o:
-	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/funkcje.c.o
-.PHONY : funkcje.c.o
-
-funkcje.i: funkcje.c.i
-
-.PHONY : funkcje.i
-
-# target to preprocess a source file
-funkcje.c.i:
-	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/funkcje.c.i
-.PHONY : funkcje.c.i
-
-funkcje.s: funkcje.c.s
-
-.PHONY : funkcje.s
-
-# target to generate assembly for a file
-funkcje.c.s:
-	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/funkcje.c.s
-.PHONY : funkcje.c.s
-
-kolejka.o: kolejka.c.o
-
-.PHONY : kolejka.o
+.PHONY : funkcje/funkcje.o
 
 # target to build an object file
-kolejka.c.o:
-	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/kolejka.c.o
-.PHONY : kolejka.c.o
+funkcje/funkcje.c.o:
+	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.o
+.PHONY : funkcje/funkcje.c.o
 
-kolejka.i: kolejka.c.i
+funkcje/funkcje.i: funkcje/funkcje.c.i
 
-.PHONY : kolejka.i
+.PHONY : funkcje/funkcje.i
 
 # target to preprocess a source file
-kolejka.c.i:
-	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/kolejka.c.i
-.PHONY : kolejka.c.i
+funkcje/funkcje.c.i:
+	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.i
+.PHONY : funkcje/funkcje.c.i
 
-kolejka.s: kolejka.c.s
+funkcje/funkcje.s: funkcje/funkcje.c.s
 
-.PHONY : kolejka.s
+.PHONY : funkcje/funkcje.s
 
 # target to generate assembly for a file
-kolejka.c.s:
-	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/kolejka.c.s
-.PHONY : kolejka.c.s
+funkcje/funkcje.c.s:
+	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.s
+.PHONY : funkcje/funkcje.c.s
+
+funkcje/kolejka.o: funkcje/kolejka.c.o
+
+.PHONY : funkcje/kolejka.o
+
+# target to build an object file
+funkcje/kolejka.c.o:
+	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.o
+.PHONY : funkcje/kolejka.c.o
+
+funkcje/kolejka.i: funkcje/kolejka.c.i
+
+.PHONY : funkcje/kolejka.i
+
+# target to preprocess a source file
+funkcje/kolejka.c.i:
+	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.i
+.PHONY : funkcje/kolejka.c.i
+
+funkcje/kolejka.s: funkcje/kolejka.c.s
+
+.PHONY : funkcje/kolejka.s
+
+# target to generate assembly for a file
+funkcje/kolejka.c.s:
+	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.s
+.PHONY : funkcje/kolejka.c.s
+
+funkcje/wypisanie_do_pliku.o: funkcje/wypisanie_do_pliku.c.o
+
+.PHONY : funkcje/wypisanie_do_pliku.o
+
+# target to build an object file
+funkcje/wypisanie_do_pliku.c.o:
+	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.o
+.PHONY : funkcje/wypisanie_do_pliku.c.o
+
+funkcje/wypisanie_do_pliku.i: funkcje/wypisanie_do_pliku.c.i
+
+.PHONY : funkcje/wypisanie_do_pliku.i
+
+# target to preprocess a source file
+funkcje/wypisanie_do_pliku.c.i:
+	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.i
+.PHONY : funkcje/wypisanie_do_pliku.c.i
+
+funkcje/wypisanie_do_pliku.s: funkcje/wypisanie_do_pliku.c.s
+
+.PHONY : funkcje/wypisanie_do_pliku.s
+
+# target to generate assembly for a file
+funkcje/wypisanie_do_pliku.c.s:
+	$(MAKE) -f CMakeFiles/Kreator_map.dir/build.make CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.s
+.PHONY : funkcje/wypisanie_do_pliku.c.s
 
 kreator_map.o: kreator_map.c.o
 
@@ -213,12 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Kreator_map"
 	@echo "... edit_cache"
-	@echo "... funkcje.o"
-	@echo "... funkcje.i"
-	@echo "... funkcje.s"
-	@echo "... kolejka.o"
-	@echo "... kolejka.i"
-	@echo "... kolejka.s"
+	@echo "... funkcje/funkcje.o"
+	@echo "... funkcje/funkcje.i"
+	@echo "... funkcje/funkcje.s"
+	@echo "... funkcje/kolejka.o"
+	@echo "... funkcje/kolejka.i"
+	@echo "... funkcje/kolejka.s"
+	@echo "... funkcje/wypisanie_do_pliku.o"
+	@echo "... funkcje/wypisanie_do_pliku.i"
+	@echo "... funkcje/wypisanie_do_pliku.s"
 	@echo "... kreator_map.o"
 	@echo "... kreator_map.i"
 	@echo "... kreator_map.s"
