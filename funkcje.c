@@ -2,7 +2,67 @@
 // Created by Przemysław Hoszowski on 08.01.2020.
 //
 #include "funkcje.h"
-int dokladnosc=1021;
+int dokladnosc;
+
+struct konfiguracja wczytaj_config()
+{
+    struct konfiguracja config;
+    FILE *plik=fopen("../config","r");
+    char linia[100];
+    if (fgets(linia,100,plik)==NULL){
+        printf("Blad podczas wczytywania konfiguracji\n");
+        exit(5);
+    }
+    config.dokladnosc= stoi(strstr(linia,"=")+2);
+    if (fgets(linia,100,plik)==NULL){
+        printf("Blad podczas wczytywania konfiguracji\n");
+        exit(5);
+    }
+    config.dokladnosc_usuwania_wody=stoi(strstr(linia,"=")+2);
+    if (fgets(linia,100,plik)==NULL){
+        printf("Blad podczas wczytywania konfiguracji\n");
+        exit(5);
+    }
+    strcpy(config.miejsce_zapisu,strstr(linia,"=")+2);
+    if (fgets(linia,100,plik)==NULL){
+        printf("Blad podczas wczytywania konfiguracji\n");
+        exit(5);
+    }
+    strcpy(config.miejsce_map,strstr(linia,"=")+2);
+    if (fgets(linia,100,plik)==NULL){
+        printf("Blad podczas wczytywania konfiguracji\n");
+        exit(5);
+    }
+    strcpy(config.adres_palety,strstr(linia,"=")+2);
+    if (fgets(linia,100,plik)==NULL){
+        printf("Blad podczas wczytywania konfiguracji\n");
+        exit(5);
+    }
+    char *wsk;
+    wsk=strstr(linia,"=")+2;
+    config.kolor_gory[0]=stoi(wsk);
+    wsk=strstr(wsk+2," ")+1;
+    config.kolor_gory[1]=stoi(wsk);
+    wsk=strstr(wsk+2," ")+1;
+    config.kolor_gory[2]=stoi(wsk);
+    usun_znak_nowej_lini(config.adres_palety);
+    usun_znak_nowej_lini(config.miejsce_map);
+    usun_znak_nowej_lini(config.miejsce_zapisu);
+    printf("Config:\n"  ///*USUN
+           "dokladnosc %i\n"
+           "dokladnosc usuwania wody %i\n"
+           "miejsce zapisu %s\n"
+           "miejsce map %s\n"
+           "adres palety %s\n"
+           "kolor gory %i %i %i",config.dokladnosc, config.dokladnosc_usuwania_wody,config.miejsce_zapisu,config.miejsce_map,config.adres_palety,config.kolor_gory[0],config.kolor_gory[1],config.kolor_gory[1]);
+    return config;
+}
+
+void usun_znak_nowej_lini(char *wsk)
+{
+    wsk=strstr(wsk,"\n");
+    *wsk='\0';
+}
 
 short odwroc(short tmp)
 {
@@ -95,7 +155,6 @@ kolor* wczytaj_palete(short min_wysokosc, short maks_wysokosc){
     for (int i=0;i<ile_kolorow;i++)
     {
         akt_kolor->wysokosc=((i*(i/10+10)+6)*(maks_wysokosc-min_wysokosc))/(ile_kolorow*(ile_kolorow/10+10)+6)+min_wysokosc;
-        printf(">%hi,%hi\n",akt_kolor->wysokosc,akt_kolor->kod_koloru[2]);
         akt_kolor=akt_kolor->next;
     }
     akt_kolor->next=NULL;
@@ -134,7 +193,6 @@ int ile_wody(int i, int j, int x, int y, short wysokosci[y][x], bool vis[y][x]) 
             vis[i][j+1]=1;
         }
     }
-    printf("Suma=%i\n",suma);
     return suma;
 }
 
@@ -151,12 +209,10 @@ void dodaj_ziemie(int i, int j, int x, int y,short wysokosci[y][x])
         dodaj_ziemie(i,j-1,x,y,wysokosci);
 }
 
-void usun_wode(int x, int y, short wysokosci[y][x],int dokladnosc){
+void usun_wode(int x, int y, short wysokosci[y][x]){
 
     bool (*vis)[y];
     vis=(bool(*)[x])malloc(x*y*sizeof(bool));
-
-    printf("%i %i<<<<<<",x,y);
     for (int i=0;i<y;i++)
         for (int j=0;j<x;j++) {
             vis[i][j] = 0;
@@ -257,7 +313,9 @@ void wypisz_do_pliku_1(int x, int y, short wysokosci[y][x],char nazwa[41]){
 
 void program(char nazwy_plikow[][41],int ile_plikow,char nazwa[41])
 {
-    dokladnosc=1201;
+    struct konfiguracja config;
+    config=wczytaj_config();
+    dokladnosc=config.dokladnosc;
     int krawedz=0;
     while (krawedz*krawedz<ile_plikow)
         krawedz++;
@@ -279,16 +337,12 @@ void program(char nazwy_plikow[][41],int ile_plikow,char nazwa[41])
             exit(2);
         }
     }
-    getchar();
     short (*wysokosci)[ile_pixeli];
     wysokosci=(short(*)[ile_pixeli])malloc(ile_pixeli*ile_pixeli*sizeof(short));
-    putchar('s');
     int rzad=0; /// Ktory rzad PLIKOW
-    getchar();
     for (int i=0;i<ile_pixeli;i++)
     {
             for (int j=0;j<krawedz;j++) {
-                printf("%i,%i,%i,%i\n", i,j,rzad * krawedz + j-rzad,rzad);
                 if (fread(&wysokosci[i][j * dokladnosc - j], sizeof(short), dokladnosc, pliki[rzad * krawedz + j]) !=
                     dokladnosc) {
                     printf("Blad przy czytaniu plikus %i\n", i);
@@ -306,7 +360,7 @@ void program(char nazwy_plikow[][41],int ile_plikow,char nazwa[41])
         for (int j=0;j<ile_pixeli;j++)
            wysokosci[i][j]=odwroc(wysokosci[i][j]);
     ///Koniec czytania plikow
-    for (int i=0;i<ile_pixeli;i++) /// Naprawa pojedynczych wysokosci Do ustalenia czy to jest woda na wyzszej wysokosci czy blad pliku
+    for (int i=0;i<ile_pixeli;i++) /// Naprawa pojedynczych wysokosci
     {
         for (int j=0;j<ile_pixeli;j++)
         {
@@ -318,8 +372,6 @@ void program(char nazwy_plikow[][41],int ile_plikow,char nazwa[41])
     }
     fclose(wynik);
 
-    usun_wode(ile_pixeli,ile_pixeli, wysokosci, dokladnosc);
-    printf("USUN WODE DZIALA");
+    usun_wode(ile_pixeli,ile_pixeli, wysokosci);
     wypisz_do_pliku_1(ile_pixeli,ile_pixeli,wysokosci,nazwa);
-    printf("DZiala");
 }

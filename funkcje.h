@@ -16,6 +16,21 @@ typedef struct kolor{
      struct kolor *next; /// Wskaznik na kolejny kolor
 }kolor;
 
+typedef struct konfiguracja{
+    int dokladnosc;
+    int dokladnosc_usuwania_wody;
+    char miejsce_zapisu[100];
+    char miejsce_map[100];
+    char adres_palety[100];
+    unsigned char kolor_gory[3];
+
+}konfiguracja;
+
+/// Wczytanie konfiguracji z pliku
+struct konfiguracja wczytaj_config();
+
+void usun_znak_nowej_lini(char *wsk);
+
 /// Big endian format <-> little endian format
 /// \param tmp - zmienna typu short
 /// \return Liczba z obroconymi bitami
@@ -64,7 +79,7 @@ void dodaj_ziemie (int i, int j, int x, int y, short wysokosci[y][x]);
 /// \param y - wysokosc tablicy
 /// \param wysokosci - tablica wysokosci
 /// \param dokladnosc
-void usun_wode(int x,int y,short wysokosci[y][x],int dokladnosc);
+void usun_wode(int x,int y,short wysokosci[y][x]);
 
 /// Wypisanie do pliku jpg
 /// \param x - szerokosc tablicy
