@@ -20,6 +20,7 @@ typedef struct konfiguracja{
     char miejsce_map[100];
     char adres_palety[100];
     char nazwa_pliku[100];
+    char *adres_uzytkownika;
     unsigned char kolor_gory[3];
     short x;
     short y;
@@ -66,4 +67,6 @@ void dodaj_ziemie (int i, int j, int x, int y, short wysokosci[y][x]);
 /// \param dokladnosc
 void usun_wode(int x,int y,short wysokosci[y][x],int dokladnosc_usuwania);
 
+///https://stackoverflow.com/questions/646241/c-run-a-system-command-and-get-output
+char* adres_home();
 #endif //KREATOR_MAP_FUNKCJE_H

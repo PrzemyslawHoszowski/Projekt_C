@@ -6,7 +6,10 @@ int dokladnosc=1201;
 
 void wczytaj_config(konfiguracja *config)
 {
-    FILE *plik=fopen("../config","r");
+    char sciezka[150]="";
+    strcpy(sciezka,config->adres_uzytkownika);
+    strcat(sciezka,"/.Kreator_map/config");
+    FILE *plik=fopen(sciezka,"r");
     char linia[100];
 
     if (fgets(linia,100,plik)==NULL){
@@ -352,4 +355,20 @@ void program(konfiguracja config,char nazwy_plikow[][20])
                 }
             }
     wypisz_do_pliku_1(ile_pixeli,ile_pixeli,wysokosci,config.nazwa_pliku, config.adres_palety, config.miejsce_zapisu,config.kolor_gory);
+}
+
+char* adres_home()
+{
+    int licz=0;
+    char *odp=malloc(sizeof (char) *50);
+    char *wsk=odp;
+    FILE *plik;
+    system("echo ~ > tymczasowy_kreator_map");
+    plik=fopen("tymczasowy_kreator_map","r");
+    fgets(odp,50,plik);
+    wsk=strstr(odp,"\n");
+    *wsk='\0';
+    fclose(plik);
+    system("rm tymczasowy_kreator_map");
+    return odp;
 }

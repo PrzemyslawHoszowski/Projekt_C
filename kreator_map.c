@@ -2,6 +2,7 @@
 #include "funkcje/funkcje.h"
 int main(int argc, char **argv) {
     konfiguracja config;
+    config.adres_uzytkownika=adres_home();
     config.ile_plikow=atoi(argv[1]);
     wczytaj_config(&config);
     /// Sprawdzenie flag

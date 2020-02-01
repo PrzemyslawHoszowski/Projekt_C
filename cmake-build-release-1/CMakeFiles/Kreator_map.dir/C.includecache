@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/funkcje.c
+funkcje.h
+/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/funkcje.h
+
 /home/przemek/Dokumenty/WDC/Kreator_map/funkcje/funkcje.h
 stdio.h
 -
@@ -34,9 +38,5 @@ stdlib.h
 jpeglib.h
 -
 funkcje.h
-/home/przemek/Dokumenty/WDC/Kreator_map/funkcje/funkcje.h
-
-/home/przemek/Dokumenty/WDC/Kreator_map/kreator_map.c
-funkcje/funkcje.h
 /home/przemek/Dokumenty/WDC/Kreator_map/funkcje/funkcje.h
 
