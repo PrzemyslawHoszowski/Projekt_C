@@ -9,6 +9,8 @@ CMakeFiles/Kreator_map.dir/funkcje/funkcje.c.o: ../funkcje/wypisanie_do_pliku.h
 CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.o: ../funkcje/kolejka.c
 CMakeFiles/Kreator_map.dir/funkcje/kolejka.c.o: ../funkcje/kolejka.h
 
+CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.o: ../funkcje/funkcje.h
+CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.o: ../funkcje/kolejka.h
 CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.o: ../funkcje/wypisanie_do_pliku.c
 CMakeFiles/Kreator_map.dir/funkcje/wypisanie_do_pliku.c.o: ../funkcje/wypisanie_do_pliku.h
 

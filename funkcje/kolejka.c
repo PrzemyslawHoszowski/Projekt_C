@@ -1,5 +1,5 @@
 //
-// Created by przemek on 22.01.2020.
+// Created by Przemysław Hoszowski on 22.01.2020.
 //
 
 #include "kolejka.h"

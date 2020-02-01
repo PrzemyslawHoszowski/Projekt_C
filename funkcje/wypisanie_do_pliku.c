@@ -1,13 +1,13 @@
 //
-// Created by przemek on 28.01.2020.
+// Created by Przemysław Hoszowski on 28.01.2020.
 //
 #include "wypisanie_do_pliku.h"
 
-kolor* wczytaj_palete(short min_wysokosc, short maks_wysokosc){
-    FILE *plik=fopen("/home/przemek/Dokumenty/WDC/Kreator_map/kolory","r");
+kolor* wczytaj_palete(short min_wysokosc, short maks_wysokosc,char *adres_palety){
+    FILE *plik=fopen(adres_palety,"r");
     if(plik==NULL)
     {
-        printf("Nie udalo sie otworzyc pliku z kolorami\n");
+        printf("Nie udalo sie otworzyc pliku z kolorami %s\n",adres_palety);
         exit(1);
     }
     kolor paleta;
@@ -47,7 +47,7 @@ kolor* wczytaj_palete(short min_wysokosc, short maks_wysokosc){
     return paleta.next;
 }
 
-void wypelnij_linie(unsigned char *linia,int rzad, int szerokosc, short wysokosci[][szerokosc], kolor *paleta){
+void wypelnij_linie(unsigned char *linia,int rzad, int szerokosc, short wysokosci[][szerokosc], kolor *paleta, unsigned char kolor_gory[3]){
     kolor *akt;
 
     for (int i=0; i<szerokosc; i++){
@@ -57,6 +57,13 @@ void wypelnij_linie(unsigned char *linia,int rzad, int szerokosc, short wysokosc
             linia[3*i]=akt->kod_koloru[0];
             linia[3*i+1]=akt->kod_koloru[1];
             linia[3*i+2]=akt->kod_koloru[2];
+            continue;
+        }
+        if (wysokosci[rzad][i]<-500)
+        {
+            linia[3*i]=kolor_gory[0];
+            linia[3*i+1]=kolor_gory[1];
+            linia[3*i+2]=kolor_gory[2];
             continue;
         }
         akt=akt->next;
@@ -69,17 +76,17 @@ void wypelnij_linie(unsigned char *linia,int rzad, int szerokosc, short wysokosc
     }
 }
 
-void wypisz_do_pliku_1(int x, int y, short wysokosci[y][x],char nazwa[41]){
+void wypisz_do_pliku_1(int x, int y, short wysokosci[y][x],char nazwa[41], char *adres_palety, char *adres_zapisu,unsigned char kolor_gory[3]){
     short min_wysokosc=3222,maks_wysokosc=0;
     for (int i=0;i<y;i++) ///Znalezienie najmniejszej i najwiekszej wysokosci
         for (int j=0;j<x;j++) {
-            if (wysokosci[i][j] < min_wysokosc && wysokosci[i][j]!=-32768)
+            if (wysokosci[i][j] < min_wysokosc && wysokosci[i][j]>-500)
                 min_wysokosc = wysokosci[i][j];
             else if (wysokosci[i][j] > maks_wysokosc)
                 maks_wysokosc = wysokosci[i][j];
         }
 
-    kolor *paleta=wczytaj_palete(min_wysokosc,maks_wysokosc); ///Wczytanie palety i ustawienie dodatkowego wskaznika na nia
+    kolor *paleta=wczytaj_palete(min_wysokosc,maks_wysokosc,adres_palety); ///Wczytanie palety i ustawienie dodatkowego wskaznika na nia
     kolor *akt=paleta;
 
     while (akt->next!=NULL)/// Wypisanie legendy w konsoli
@@ -87,12 +94,14 @@ void wypisz_do_pliku_1(int x, int y, short wysokosci[y][x],char nazwa[41]){
         printf("%hi %hi\n",akt->kod_koloru[0], akt->wysokosc);
         akt=akt->next;
     }
+    // Zródło: https://stackoverflow.com/questions/4559648/write-to-memory-buffer-instead-of-file-with-libjpeg
 
     struct jpeg_compress_struct cinfo;
     struct jpeg_error_mgr jerr;
     JSAMPROW row_pointer[1];
 
-    char nazwa2[46]="";
+    char nazwa2[150]="";
+    strcpy(nazwa2,adres_zapisu);
     if (strstr(nazwa,".jpeg")==NULL && strstr(nazwa,".jpg")==NULL) ///Dorzucam koncowki
     {
         strcat(nazwa2,nazwa);
@@ -122,7 +131,7 @@ void wypisz_do_pliku_1(int x, int y, short wysokosci[y][x],char nazwa[41]){
     unsigned char linia[3*x];
     while ( cinfo.next_scanline < cinfo.image_height)
     {
-        wypelnij_linie(linia,rzad,x,wysokosci, paleta);
+        wypelnij_linie(linia,rzad,x,wysokosci, paleta, kolor_gory);
         row_pointer[0]=linia;
         jpeg_write_scanlines(&cinfo, row_pointer, 1);
         rzad++;
